@@ -10,7 +10,7 @@ public class Resources{
     
     
     public Resources(){
-
+        
         health=100;
         energy=1;
         sP=0;mP=0;lP=0;sB=0;mB=0;lB=0;sPak=1;scrap=0;
@@ -58,7 +58,9 @@ public class Resources{
             System.out.println("Nothing.");
 }       if(robots>1){
             System.out.println("Robots: "+robots);
+            
 }
+        
 }
 
 
