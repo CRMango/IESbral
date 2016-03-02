@@ -53,22 +53,40 @@ public class Secondary
            if(position==0){
                position=1;
             } else if(position==2){
+               if(ctrlUn!=0){
                 position=4;
+                ctrlUn=2;
+               }
             } else if(position==3){
+               if(mdbyUn!=0){
+                mdbyUn=2;
                 position=5;
+               }
             } else if(position==5){
+               if(shbyUn!=0){
                 position=6;
+                shbyUn=2;
+               }
             } else if(position==6){
+               if(crqrUn!=0){
                 position=2;
+                crqr=2; //set to 2 so no more intro look around
+               }
             } else {
                 System.out.println("You can't go that way.");
         }
        //north
         if(drctn==2){
            if(position==0){
+              if(mdbyUn!=0){
+               mdbyUn=2;
                position=5;
+              }
             } else if(position==1){
+               if(shbyUn!=0){
                 position=6;
+                shbyUn=2;
+               }
             } else {
                 System.out.println("You can't go that way.");
             }
@@ -78,13 +96,25 @@ public class Secondary
            if(position==1){
                position=0;
             } else if(position==2){
+               if(shbyUn!=0){
                 position=6;
+                shbyUn=2;
+               }
             } else if(position==4){
+               if(crqr!=0){
+                crqrUn=2;
                 position=2;
+               }
             } else if(position==6){
+               if(mdbyUn!=0){
                 position=5;
+                mdbyUn=2;
+               }
             } else if(position==5){
+               if(rbtcUn!=0){
                 position=3;
+                rbtcUn=2;
+               }
             }
         }
         //south
