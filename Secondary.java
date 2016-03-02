@@ -153,7 +153,12 @@ public void lookAround(){
     
 }
 public void disaster(int b){
+    if(b==1){ //reactor failure
+    Interface.reactorlevel--;
+    }
+    if(b==2){
+       
     
-
-}
-}
+    }
+    }
+    }
