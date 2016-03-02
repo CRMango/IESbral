@@ -24,7 +24,7 @@ public class Interface{
         int reactorstatus=0;
         while((Resources.health)>0){
 
-            if(sc.nextLine()=="look around"){
+            if(sc.next()=="look around"){
                 //link to secondary class for deciding room and needed description
             } else if(sc.next()=="move west"){
                 sec.moveToRoom(4);
@@ -43,11 +43,11 @@ public class Interface{
                     if(Secondary.position==1){
                         System.out.println("The Reactor");
                     }
-                    if(sc.nextLine()=="Stimpaks"){
+                    if(sc.next()=="Stimpaks"){
                         res.transaction(10,-1);
                         System.out.println("You feel much better as the painkillers and nanomachines enter your bloodstream.");
                     }
-                    if(sc.nextLine()=="The Reactor"){
+                    if(sc.next()=="The Reactor"){
                         if(reactorstatus==1){
                             System.out.println("Fix reactor");
                             reactorstatus=0;
@@ -58,11 +58,11 @@ public class Interface{
                     
                     }
                 }
-            } else if(sc.nextLine()=="interact"){
+            } else if(sc.next()=="interact"){
 
-            } else if(sc.nextLine()=="upgrade"){
+            } else if(sc.next()=="upgrade"){
 
-            } else if(sc.nextLine()=="check resources"){
+            } else if(sc.next()=="check resources"){
                 res.check();
             }
             //start end of turn sequence
