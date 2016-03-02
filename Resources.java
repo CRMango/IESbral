@@ -55,9 +55,10 @@ public class Resources{
         if(tool==1){
             System.out.println("ME-32P Wrench");
         } 
-}       if(robots>1){
+       if(robots>1){
             System.out.println("Robots: "+robots);
             
 }
         
+}
 }

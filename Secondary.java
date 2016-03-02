@@ -13,6 +13,8 @@ public class Secondary
    int mdbyUn;
    int shbyUn;
    int rbtcUn;
+  static int reactorlevel=1;
+        static int reactorstatus=0;
    /* matter to energy (0) links to reactor room north, med bay east
     * reactor room (1) links to matter to energy south, shuttle bay east
     * crew quarters (2) links to shuttle bay south, control room north
@@ -70,7 +72,7 @@ public class Secondary
             } else if(position==6){
                if(crqrUn!=0){
                 position=2;
-                crqr=2; //set to 2 so no more intro look around
+                crqrUn=2; //set to 2 so no more intro look around
                }
             } else {
                 System.out.println("You can't go that way.");
@@ -101,7 +103,7 @@ public class Secondary
                 shbyUn=2;
                }
             } else if(position==4){
-               if(crqr!=0){
+               if(crqrUn!=0){
                 crqrUn=2;
                 position=2;
                }
@@ -154,7 +156,7 @@ public void lookAround(){
 }
 public void disaster(int b){
     if(b==1){ //reactor failure
-    Interface.reactorlevel--;
+        reactorlevel--;
     }
     if(b==2){
        

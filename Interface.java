@@ -20,21 +20,20 @@ public class Interface{
         Secondary sec = new Secondary();
         Scanner sc = new Scanner(System.in);
         Random rg = new Random();
-        int reactorlevel=1;
-        int reactorstatus=0;
+         
         while((Resources.health)>0){
 
             if(sc.next()=="look around"){
                 //link to secondary class for deciding room and needed description
-            } else if(sc.next()=="move west"){
+            } else if(sc.next().equals("move west")){
                 sec.moveToRoom(4);
-            } else if(sc.next()=="move north"){
+            } else if(sc.next().eqauls("move north")){
                 sec.moveToRoom(1);
-            } else if(sc.next()=="move east"){
+            } else if(sc.next().equals("move east")){
                 sec.moveToRoom(2);
-            } else if(sc.next()=="move south"){
+            } else if(sc.next().equals("move south")){
                 sec.moveToRoom(3);
-            } else if(sc.next()=="use"){
+            } else if(sc.next().equals("use")){
                 System.out.println("What do you want to use?");
                 System.out.println("You have :");
                 if(Resources.sPak>0){
@@ -48,9 +47,9 @@ public class Interface{
                         System.out.println("You feel much better as the painkillers and nanomachines enter your bloodstream.");
                     }
                     if(sc.next()=="The Reactor"){
-                        if(reactorstatus==1){
+                        if(Secondary.reactorstatus==1){
                             System.out.println("Fix reactor");
-                            reactorstatus=0;
+                            Secondary.reactorstatus=0;
                         } else {
                             System.out.println("Use reactor");
                             res.transaction(2,1);
@@ -58,7 +57,7 @@ public class Interface{
                     
                     }
                 }
-            } else if(sc.next()=="interact"){
+            } else if(sc.next()"interact"){
 
             } else if(sc.next()=="upgrade"){
 
@@ -66,8 +65,8 @@ public class Interface{
                 res.check();
             }
             //start end of turn sequence
-            if(reactorstatus==0){
-                res.transaction(2,reactorlevel);
+            if(Secondary.reactorstatus==0){
+                res.transaction(2,Secondary.reactorlevel);
             } else {
                 System.out.println("(the reactor isn't working, you don't get any energy this turn.)");
             }
