@@ -54,14 +54,10 @@ public class Resources{
         System.out.println("Extended inventory:");
         if(tool==1){
             System.out.println("ME-32P Wrench");
-        } else {
-            System.out.println("Nothing.");
+        } 
 }       if(robots>1){
             System.out.println("Robots: "+robots);
             
 }
         
-}
-
-
 }
