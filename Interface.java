@@ -26,15 +26,15 @@ public class Interface{
 
             if(sc.nextLine()=="look around"){
                 //link to secondary class for deciding room and needed description
-            } else if(sc.nextLine()=="move west"){
+            } else if(sc.next()=="move west"){
                 sec.moveToRoom(4);
-            } else if(sc.nextLine()=="move north"){
+            } else if(sc.next()=="move north"){
                 sec.moveToRoom(1);
-            } else if(sc.nextLine()=="move east"){
+            } else if(sc.next()=="move east"){
                 sec.moveToRoom(2);
-            } else if(sc.nextLine()=="move south"){
+            } else if(sc.next()=="move south"){
                 sec.moveToRoom(3);
-            } else if(sc.nextLine()=="use"){
+            } else if(sc.next()=="use"){
                 System.out.println("What do you want to use?");
                 System.out.println("You have :");
                 if(Resources.sPak>0){
