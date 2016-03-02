@@ -27,7 +27,7 @@ public class Interface{
                 //link to secondary class for deciding room and needed description
             } else if(sc.next().equals("move west")){
                 sec.moveToRoom(4);
-            } else if(sc.next().eqauls("move north")){
+            } else if(sc.next().equals("move north")){
                 sec.moveToRoom(1);
             } else if(sc.next().equals("move east")){
                 sec.moveToRoom(2);
@@ -57,11 +57,11 @@ public class Interface{
                     
                     }
                 }
-            } else if(sc.next()"interact"){
+            } else if(sc.next().equals("interact")){
 
-            } else if(sc.next()=="upgrade"){
+            } else if(sc.next().equals("upgrade")){
 
-            } else if(sc.next()=="check resources"){
+            } else if(sc.next().equals("check resources")){
                 res.check();
             }
             //start end of turn sequence
