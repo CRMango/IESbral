@@ -20,33 +20,36 @@ public class Interface{
         Secondary sec = new Secondary();
         Scanner sc = new Scanner(System.in);
         Random rg = new Random();
-         
+        String v = "temp";
+        String s = "vr";
         while((Resources.health)>0){
-
-            if(sc.next()=="look around"){
+            v = sc.nextLine();
+            if(v.equalsIgnoreCase("look around")){
                 //link to secondary class for deciding room and needed description
-            } else if(sc.next().equals("move west")){
+                System.out.println("Test");
+            } else if(v.equalsIgnoreCase("move west")){
                 sec.moveToRoom(4);
-            } else if(sc.next().equals("move north")){
+            } else if(v.equalsIgnoreCase("move north")){
                 sec.moveToRoom(1);
-            } else if(sc.next().equals("move east")){
+            } else if(v.equalsIgnoreCase("move east")){
                 sec.moveToRoom(2);
-            } else if(sc.next().equals("move south")){
+            } else if(v.equalsIgnoreCase("move south")){
                 sec.moveToRoom(3);
-            } else if(sc.next().equals("use")){
+            } else if(v.equalsIgnoreCase("use")){
                 System.out.println("What do you want to use?");
                 System.out.println("You have :");
                 if(Resources.sPak>0){
                     System.out.println("Stimpaks  ");
                 }
-                    if(Secondary.position==1){
+                if(Secondary.position==1){
                         System.out.println("The Reactor");
-                    }
-                    if(sc.next()=="Stimpaks"){
+                    }    
+                    s=sc.nextLine();
+                    if(s.equalsIgnoreCase("Stimpaks")){
                         res.transaction(10,-1);
                         System.out.println("You feel much better as the painkillers and nanomachines enter your bloodstream.");
                     }
-                    if(sc.next()=="The Reactor"){
+                    if(v.equalsIgnoreCase("The Reactor")){
                         if(Secondary.reactorstatus==1){
                             System.out.println("Fix reactor");
                             Secondary.reactorstatus=0;
@@ -57,12 +60,13 @@ public class Interface{
                     
                     }
                 }
-            } else if(sc.next().equals("interact")){
+            } else if(v.equalsIgnoreCase("interact")){
 
-            } else if(sc.next().equals("upgrade")){
+            } else if(v.equalsIgnoreCase("upgrade")){
 
-            } else if(sc.next().equals("check resources")){
+            } else if(v.equalsIgnoreCase("check resources")){
                 res.check();
+                sec.lookAround();
             }
             //start end of turn sequence
             if(Secondary.reactorstatus==0){

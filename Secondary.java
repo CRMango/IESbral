@@ -135,7 +135,7 @@ public class Secondary
 public void lookAround(){
     if(position==0){
         System.out.println("You are in the matter converter room, the matter converter looks partially broken, and it is ");
-        System.out.println("charging slowly. The blast door to med bay is locked, and the ladder to reactor is open");
+        System.out.println("charging slowly. The blast door to the east leading to the med bay is locked, and the north ladder to the reactor is open.");
     } else if(position==1){
         
     } else if(position==2){
