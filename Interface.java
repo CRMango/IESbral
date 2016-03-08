@@ -26,7 +26,6 @@ public class Interface{
             v = sc.nextLine();
             if(v.equalsIgnoreCase("look around")){
                 //link to secondary class for deciding room and needed description
-                System.out.println("Test");
             } else if(v.equalsIgnoreCase("move west")){
                 sec.moveToRoom(4);
             } else if(v.equalsIgnoreCase("move north")){
@@ -44,6 +43,10 @@ public class Interface{
                 if(Secondary.position==1){
                         System.out.println("The Reactor");
                     }    
+                if(Resources.tool==1){
+                    
+                }
+                }
                     s=sc.nextLine();
                     if(s.equalsIgnoreCase("Stimpaks")){
                         res.transaction(10,-1);
@@ -60,10 +63,14 @@ public class Interface{
                     
                     }
                 }
-            } else if(v.equalsIgnoreCase("interact")){
-
             } else if(v.equalsIgnoreCase("upgrade")){
-
+                if(Secondary.position==1){
+                    if(Resources.energy>Secondary.reactorlevel*5){
+                        res.transaction(1,Secondary.reactorlevel*5);
+                        Secondary.reactorlevel++;
+                    }
+                }
+                }
             } else if(v.equalsIgnoreCase("check resources")){
                 res.check();
                 sec.lookAround();
@@ -92,16 +99,10 @@ public class Interface{
             
             
             
-            
+            System.out.println("some death message");
 
         }
         
-        System.out.println("some death message");
+        
     
-    }
-
-
-
-
-
-}
+   
