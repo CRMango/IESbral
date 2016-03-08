@@ -71,7 +71,7 @@ public class Interface{
                     }
                 }
                 }
-            } else if(v.equalsIgnoreCase("check resources")){
+            } else if(v.equalsIgnoreCase("check situation")){
                 res.check();
                 sec.lookAround();
             }
