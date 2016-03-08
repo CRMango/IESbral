@@ -5,14 +5,15 @@
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Secondary
-{
+public class Secondary{
+
    static int position;
    int crqrUn;
    int ctrlUn; 
    int mdbyUn;
    int shbyUn;
    int rbtcUn;
+   int engFrst=1;
   static int reactorlevel=1;
         static int reactorstatus=0;
    /* matter to energy (0) links to reactor room north, med bay east
@@ -137,17 +138,53 @@ public void lookAround(){
         System.out.println("You are in the matter converter room, the matter converter looks partially broken, and it is ");
         System.out.println("charging slowly. The blast door to the east leading to the med bay is locked, and the north ladder to the reactor is open.");
     } else if(position==1){
+       if(reactorstatus==1){
+          if(engFrst==1){
+             System.out.println("the reactor is partially destroyed. the blast door to the hanger is locked. you find 10 scrap and crew report #4.");
+       } else {
+          
+          
+       }
         
-    } else if(position==2){
-        
+          
+       }
+          
+       } else if(position==2){
+        if(crqrUn==1){
+           System.out.println("you enter the place where you and the rest of the crew use to live, all 9 of you,");
+           System.out.println("or was it 10, no it was 10 you're sure now. you search all of the rooms and find the");
+           System.out.println("me 32p wrench.you also find logs: ///");
+        }
     } else if(position==3){
-        
+        if(rbtcUn==1){
+           System.out.println("strangely there are no bodies here, but a lot of blood. there are signs of an explosion you activate the room. you have (robot number) amount");
+           System.out.println("of robots. they are collecting scrap at (scrap rate) per turn. you find 12 scrap, you find crew log");
+        } else {
+           System.out.println("you have "+ Resources.robots " amount of robots. they are collecting scrap at "+Resources.robots*10"per turn.");
+        }
     } else if(position==4){
-        
+        System.out.println("you enter the control room, it is actually pristeen. no bodies, no blood, it creeps you out. you see the main computer, the cerebral cortex as it’s called");
+        System.out.println(", it has a 512 bit 20 core processor that runs at 3 terahertz with 2 petabytes of ram 3 yottabyte of storage and a gtx 96016 graphics card. surprisingly the computer is very small,");
+        System.out.println(" the problem is the computer runs at 1700 c and can melt titanium, it uses the it uses the body of the space station and the huge point on the top of the space station as a heat sink. you reboot the computer");
+        System.out.println("and change to green alert. if you have repaired the robot bay door the room is open now. ");
     } else if(position==5){
-        
+        if(mdbyUn==1){
+           
+           System.out.println("the med bay looks quite intact, the only problem is all of the blood everywhere, and the bodies disfigured beyond recognition, but i ");
+        System.out.println("guess that is similar to the rest of the ship. you can heal here, you can build stimpacks here, you find crew message T&T and 10 scrap.");
+           
+        } else {
+           System.out.println("the med bay looks intact, basicly prestine. all machines work.");
+        }
     } else if(position==6){
-        
+        if(shbyUn==1){
+           System.out.println("you walk into the shuttle bay, there is 1 husk of a cargo shuttle, there is a shuttle modification and repairing machine (SMRM) it looks relatively intact ");
+           System.out.println("but the matter to energy catalyst has been broken. the bodies in this part of the ship are wearing federation army uniforms.")
+         System.out.println("if you repair the ship you may be able to leave. you find crew report T, you find 1 medium part and 5 large parts.");
+           
+        } else {
+           System.out.println("there is the cargo shuttle here. you can modify the shuttle using the SMRM.");
+        }
     }
     
     
@@ -161,6 +198,4 @@ public void disaster(int b){
     if(b==2){
        
     
-    }
-    }
     }
