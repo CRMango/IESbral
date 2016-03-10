@@ -92,15 +92,8 @@ public class Interface{
                     
                     }
                     if(s.equalsIgnoreCase("wrench"){
-                        if(sec.position==5){
-                            if(Secondary.rbtcUn!=2){
-                            System.out.println("You fix the bolting on the robots room door, this should fix the manual override lockdown.");
-                            System.out.println("I wonder who did that, and why, you say to yourself as the door unjams to the south.");
-                            sec.unlockRoom(3);
-                            } else {
-                                System.out.println("You've already unlocked the robotics door.");
-                            }
-                        }else if(sec.position==6){
+                        
+                        if(sec.position==6){
                             if(x%2==1){
                                 if(x==0){
                                 System.out.println("You tighten the screws on the engine, you are the first step closer to getting this ship fixed!");
