@@ -12,8 +12,11 @@ public class Interface{
         int disasterchance=-10;
         System.out.println("you have an aching head, arm, and leg. you have no idea what happened. you look ");
         System.out.println("around, you see that your are in the matter converter room, the matter converter looks partially");
-        System.out.println("broken, it is charging slowly. you have a key card on you, it says that you are Thorburn Dylan Neville,");
-        System.out.println("engineer. you should probably start to build. blast door to med bay is locked, ladder to reactor");
+        System.out.println("broken, it is charging slowly. you have a tablet on you, you boot it up. ");
+        System.out.println("the tablet asks you if you want to turn on floatdownload©, you do. it tackes you to the log in screen");
+        System.out.println("it says that you are Thorburn Dylan Neville,engineer. you log in and learn that you can use this tablet");
+        System.out.println("for checking suplies and downloading floatdownload© files. you should be able to get crew logs and");
+        System.out.println("blueprints. you should probably start to build. blast door to med bay is locked, ladder to reactor");
         System.out.println("is open. if you want to know what you can do type commands.");
 
            
