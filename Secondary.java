@@ -34,6 +34,41 @@ public class Secondary{
        rbtcUn=0;
        mdbyUn=0;
     }
+   public void readLog(int i){
+      if(i==1){
+         System.out.println("what is that, oh god he is trying to get in… *explosion* what is he doing out there, what was that?");
+         System.out.println("*scraping*");
+         System.out.println("OH SHIT, OH SHIT, OH SHIT.");
+         System.out.println("*The report ends to the sound of a door opening.*");
+         
+      }else if(i==5){
+         System.out.println("med report 3112-jan-31 *female voice* day 1 medical exams are complete, everyone is healthy and fit.");
+         System.out.println("all ten members of the crew, testing can begin at any moment. the full");
+         System.out.println("body restorer seems to be working perfectly. we should");
+         System.out.println("*audio distortion makes the rest impossible to understand.*");
+         System.out.println("There is another log here.");
+         System.out.println("");
+         System.out.println("med report 3112-aug-28 *female voice* the test subject has had no negative effects from the body regenerator but dieing and coming");
+         System.out.println(" back to life seems to have taken a toll on his mind. he seems to be raving about how we have put him through hell and he");
+         System.out.println(" is going to put us through the same. he is secured to the table but a transport wont be here for 3 days, it's not like the glory days of the federation anymore.");
+         System.out.println("End of transmission.");
+      }else if(i==6){
+         System.out.println("fedarmy black bo_ 3112-aug-31. *male voice* shuttle 341 has docked with space station_r2 and are ready to receive the transport.");
+         System.out.println("we have not received any communication from the station.");
+         System.out.println("*a loud, undistinguishable noise causes the man to drop the log recorder*");
+         System.out.println("what is that running at us? oh god he is covered in blood, open fire!");
+         System.out.println("*after several seconds of the unmistakeable sound of laser blasts* ");
+         System.out.println("i think we got him.");
+         System.out.println("*Another voice, a robot's this time:*");
+         System.out.println("shuttle has sustained high damage. unable to function. shutting down.");
+         System.out.println("END OF LOG.");
+         
+      }else if(i==3){
+         //robot room
+         System.out.println("*new female voice * i think i have found refuge from John, hopefully I can wait till the shuttle shows up tomorrow, he should be unable to enter.");
+         
+      }
+   }
    public void unlockRoom(int i){
        if(i==0){
            crqrUn=1;
@@ -192,10 +227,16 @@ public void lookAround(){
     
 }
 public void disaster(int b){
-    if(b==1){ //reactor failure
+    if(b<2){ //reactor failure
         reactorlevel--;
     }
-    if(b==2){
+    if(b=2){
+       Resources.health=Resources.health-10;
+       if(Resources.health>0){
+          
+       } else {
+          
+       }
        
     
     
