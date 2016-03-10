@@ -160,7 +160,7 @@ public void lookAround(){
            System.out.println("strangely there are no bodies here, but a lot of blood. there are signs of an explosion you activate the room. you have (robot number) amount");
            System.out.println("of robots. they are collecting scrap at (scrap rate) per turn. you find 12 scrap, you find crew log");
         } else {
-           System.out.println("you have "+ Resources.robots " amount of robots. they are collecting scrap at "+Resources.robots*10"per turn.");
+           System.out.println("you have "+ Resources.robots + " amount of robots. they are collecting scrap at "+Resources.robots*10 + " per turn.");
         }
     } else if(position==4){
         System.out.println("you enter the control room, it is actually pristeen. no bodies, no blood, it creeps you out. you see the main computer, the cerebral cortex as it’s called");
@@ -179,7 +179,7 @@ public void lookAround(){
     } else if(position==6){
         if(shbyUn==1){
            System.out.println("you walk into the shuttle bay, there is 1 husk of a cargo shuttle, there is a shuttle modification and repairing machine (SMRM) it looks relatively intact ");
-           System.out.println("but the matter to energy catalyst has been broken. the bodies in this part of the ship are wearing federation army uniforms.")
+           System.out.println("but the matter to energy catalyst has been broken. the bodies in this part of the ship are wearing federation army uniforms.");
          System.out.println("if you repair the ship you may be able to leave. you find crew report T, you find 1 medium part and 5 large parts.");
            
         } else {
@@ -198,4 +198,7 @@ public void disaster(int b){
     if(b==2){
        
     
+    
     }
+}
+}

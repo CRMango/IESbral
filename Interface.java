@@ -63,7 +63,7 @@ public class Interface{
                     
                     }
                 }
-            } else if(v.equalsIgnoreCase("upgrade")){
+             else if(v.equalsIgnoreCase("upgrade")){
                 if(Secondary.position==1){
                     if(Resources.energy>Secondary.reactorlevel*5){
                         res.transaction(1,Secondary.reactorlevel*5);
@@ -71,7 +71,7 @@ public class Interface{
                     }
                 }
                 }
-            } else if(v.equalsIgnoreCase("check situation")){
+             else if(v.equalsIgnoreCase("check situation")){
                 res.check();
                 sec.lookAround();
             }
@@ -96,12 +96,13 @@ public class Interface{
                 //reactor failure (reactor downgrade), asteroid (lose some resources fixing it)
                 sec.disaster(rg.nextInt(2));
             }
-            
+        }
             
             
             System.out.println("some death message");
 
         }
+    }
         
         
     
