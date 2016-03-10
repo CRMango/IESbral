@@ -7,7 +7,8 @@ import java.util.Random;
 public class Interface{
 
     public static void main(String[]args){
-        
+        int x = 0;
+        //this is the shuttle status
         int disasterchance=-10;
         System.out.println("you have an aching head, arm, and leg. you have no idea what happened. you look ");
         System.out.println("around, you see that your are in the matter converter room, the matter converter looks partially");
@@ -25,7 +26,7 @@ public class Interface{
         while((Resources.health)>0){
             v = sc.nextLine();
             if(v.equalsIgnoreCase("look around")){
-                //link to secondary class for deciding room and needed description
+                sec.lookAround();
             } else if(v.equalsIgnoreCase("move west")){
                 sec.moveToRoom(4);
             } else if(v.equalsIgnoreCase("move north")){
@@ -34,6 +35,31 @@ public class Interface{
                 sec.moveToRoom(2);
             } else if(v.equalsIgnoreCase("move south")){
                 sec.moveToRoom(3);
+            } else if(v.equalsIgnoreCase("add to shuttle")){
+                System.out.println("According to the instruction manual, you need to build a replacement for the ");
+                if(x==1){
+                    System.out.print("supply system first.");
+                } else if(x==3){
+                    System.out.print("jump computer next.");
+                } else if(x==5){
+                    System.out.print("rotational thrusters next.");
+                } else if(x==7){
+                    System.out.print("cockpit screen next.");
+                } else if(x==9){
+                    System.out.print("reactor core, and then after you fix the door you can leave this nightmare.");
+                } else if(x%2==0){
+                    System.out.print("... actually, first you should put the last replacement you made on the shuttle with the wrench.");
+                } else if(x%2==1){
+                    System.out.println("All the replacements cost 15 jigawatts. Do you want to continue?  y/n");
+                    temp = sc.nextLine();
+                    if(temp.equalsIgnoreCase("y")){
+                        x++;
+                        res.transaction(2,-15);
+                    } else {
+                        
+                    }
+                }
+                
             } else if(v.equalsIgnoreCase("use")){
                 System.out.println("What do you want to use?");
                 System.out.println("You have :");
@@ -44,7 +70,7 @@ public class Interface{
                         System.out.println("The Reactor");
                     }    
                 if(Resources.tool==1){
-                    
+                    System.out.println("The ME-32P Wrench. (just type wrench)");
                 }
                 }
                     s=sc.nextLine();
@@ -62,11 +88,34 @@ public class Interface{
                         
                     
                     }
+                    if(s.equalsIgnoreCase("wrench"){
+                        if(sec.position==5){
+                            if(Secondary.rbtcUn!=2){
+                            System.out.println("You fix the bolting on the robots room door, this should fix the manual override lockdown.");
+                            System.out.println("I wonder who did that, and why, you say to yourself as the door unjams to the south.");
+                            sec.unlockRoom(3);
+                            } else {
+                                System.out.println("You've already unlocked the robotics door.");
+                            }
+                        }else if(sec.position==6){
+                            if(x%2==1){
+                                if(x==0){
+                                System.out.println("You tighten the screws on the engine, you are the first step closer to getting this ship fixed!");
+                                } else {
+                                 System.out.println("The newly added part gets put on with the wrench, you are one step closer to getting this ship fixed!");
+                                 
+                                }
+                                x++;
+                            } else {
+                                System.out.println("Unfortunately, the ME32-P Wrench is only the size needed to fix the shuttle in the hanger, and the robotics door.");
+                            }
+                        }
+                    }
                 }
              else if(v.equalsIgnoreCase("upgrade")){
                 if(Secondary.position==1){
                     if(Resources.energy>Secondary.reactorlevel*5){
-                        res.transaction(1,Secondary.reactorlevel*5);
+                        res.transaction(2,Secondary.reactorlevel*5);
                         Secondary.reactorlevel++;
                     }
                 }
@@ -74,7 +123,37 @@ public class Interface{
              else if(v.equalsIgnoreCase("check situation")){
                 res.check();
                 sec.lookAround();
-            }
+             else if(v.equalsIgnoreCase("listen to log")){
+                 sec.readLog(sec.Position);
+             }
+             else if(v.equalsIgnoreCase("generate food")){
+                 if(sec.position==5){
+                     
+                 if(Resources.energy<4){
+                     res.transaction(1,-4);
+                     res.transaction(11,7);
+                     System.out.println("This should last you for a while.");
+                 } else {
+                     System.out.println("You still need more energy for the generation!");
+                 }
+                 } else {
+                     System.out.println("You need to be in the medbay for this to work.");
+                 }
+             }
+             else if(v.equalsIgnoreCase("help")){
+                 System.out.println("The available commands are:");
+                 System.out.println("upgrade, use for upgrading the reactor");
+                 System.out.println("generate food, use to sustain yourself, used in the med room");
+                 System.out.println("check situation, finds your resource total, your log completion, and your wellbeing.");
+                 System.out.println("move west / move east / move north / move south");
+                 System.out.println("listen to log, only usable for the log in the room you found it in");
+                 System.out.println("use, gives you some options such as manning the reactor for a bonus, fixing it, healing and so on.");
+                 System.out.println("Try to use this and check situation as sparingly as possible, as the time it takes for the character to read the manual");
+                 System.out.println("Or gather his resources takes a full turn!");
+                 
+             }
+             
+            
             //start end of turn sequence
             if(Secondary.reactorstatus==0){
                 res.transaction(2,Secondary.reactorlevel);
@@ -92,9 +171,9 @@ public class Interface{
             
             
             disasterchance=disasterchance+5;
-            if(rg.nextInt(100)>=disasterchance){
+            if(rg.nextInt(100)<=disasterchance){
                 //reactor failure (reactor downgrade), asteroid (lose some resources fixing it)
-                sec.disaster(rg.nextInt(2));
+                sec.disaster(rg.nextInt(3));
             }
         }
             
@@ -103,6 +182,7 @@ public class Interface{
 
         }
     }
+}
         
         
     
