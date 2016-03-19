@@ -24,9 +24,11 @@ public class Interface{
         Secondary sec = new Secondary();
         Scanner sc = new Scanner(System.in);
         Random rg = new Random();
+        int mode = 0;
         String v = "temp";
         String s = "vr";
         while((Resources.health)>0){
+            if(mode==0){
             v = sc.nextLine();
             if(v.equalsIgnoreCase("look around")){
                 sec.lookAround();
@@ -173,7 +175,9 @@ public class Interface{
             }
         }
             
+            } else {
             
+            }
             System.out.println("some death message");
 
         }
