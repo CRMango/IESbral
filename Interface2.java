@@ -38,7 +38,7 @@ public class Interface2
         robots=0;
         int reactorlevel=1;
         int reactorstatus=1;
-        int[] lng = { 0,0,0,0,0,0,0,0,0,0,0 };
+        int[] lng = { 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 };
         int temp2=0;
         Scanner sc = new Scanner(System.in);
         int type=1;
@@ -694,55 +694,140 @@ public class Interface2
                 if(logs>0){
                     System.out.println("Enter the corrosponding number:");
                     if(lng[0]==1){
-                        System.out.println("#1: Log 1");
+                        System.out.println("#1: the physicist talks to himself in the ME room");
                     }
                     if(lng[1]==1){
-                        System.out.println("#2: med report 3112-jan-31");
+                        System.out.println("#2: opening day medical checks");
                     }
                     if(lng[2]==1){
-                        System.out.println("#3: med report 3112-aug-28");
+                        System.out.println("#3: armed escort request");
                     }
                     if(lng[3]==1){
-                        System.out.println("#4: fedarmy black bo_ 3112-aug-31");
+                        System.out.println("#4: biologist cowering in the shuttle room");
                     }
                     if(lng[4]==1){
-                        System.out.println("#5: crew report_5"); //emergency shutdown
+                        System.out.println("#5: Black box of shuttle 341,6954"); //emergency shutdown
                     }
                     if(lng[5]==1){
-                        System.out.println("#6: crew report_6"); //female in robotics room
+                        System.out.println("#6: engineer 2 talking"); //female in robotics room
                     }
                     if(lng[6]==1){
-                        System.out.println("");
+                        System.out.println("#7Captain's log: stardate: exposition ");
+                    }
+                    if(lng[7]==1){
+                        System.out.println("#8 medical log of a psychoanalysis");
+                    }
+                    if(lng[8]==1){
+                        System.out.println("#9 testing parameters");
+                    }
+                    if(lng[9]==1){
+                        System.out.println("#10 distress call");
+                    }
+                    if(lng[10]==1){
+                        System.out.println("#11 Captain of the ss gonna die");
+                    }
+                    if(lng[11]==1){
+                        System.out.println("#12 robot room shutting down");
+                    }
+                    if(lng[12]==1){
+                        System.out.println("#13 engineer 2 messing up");
+                    }
+                    if(lng[13]==1){
+                        System.out.println("#14 a horrible breakthrough");
+                    }
+                    if(lng[14]==1){
+                        System.out.println("#15 Revenge");
+                        
                     }
                     input=sc.nextLine();
                     if(input.equalsIgnoreCase("1")){
-                        System.out.println("what is that, oh god he is trying to get in… *explosion* what is he doing out there, what was that?");
-                        System.out.println("*scraping*");
-                        System.out.println("OH SHIT, OH SHIT, OH SHIT.");
-                        System.out.println("*The report ends to the sound of a door opening.*");
+                        System.out.println("report made by  Bernie Fancy Dalton -physicist: what is he doing out there, does he not know");
+                        System.out.println("how dangerous that is. We are orbiting a planet at 10000 km/h and all that is separating us ");
+                        System.out.println("from the endless void of space is a few centimeters of titanium. why does he need to blow up ");
+                        System.out.println("everything he breaks? why can’t he just smash things:? I mean he is just breaking all of the");
+                        System.out.println("doors in the station. Why is he trying to kill us all? I know we did some bad things to him but he ");
+                        System.out.println("signed up for this. I should probably try to get to the comms room before he destroys all of the");
+                        System.out.println("doors. I have already wiped the blueprints from the matter to energy converter so he can't");
+                        System.out.println("build any more explosives, it's the most I can do. I should just head to the comms room.");
+                        System.out.println("*end of log*");
                     } else if(input.equalsIgnoreCase("2")){
                         System.out.println("med report 3112-jan-31 *female voice* day 1 medical exams are complete, everyone is healthy and fit.");
                         System.out.println("all ten members of the crew, testing can begin at any moment. the full");
                         System.out.println("body restorer seems to be working perfectly. we should");
                         System.out.println("*audio distortion makes the rest impossible to understand.*");
                     } else if(input.equalsIgnoreCase("3")){
-                        System.out.println("med report 3112-aug-28 *female voice* the test subject has had no negative effects from the body regenerator but dieing and coming");
-                        System.out.println(" back to life seems to have taken a toll on his mind. he seems to be raving about how we have put him through hell and he");
-                        System.out.println(" is going to put us through the same. he is secured to the table but a transport wont be here for 3 days, it's not like the glory days of the federation anymore.");
+                        System.out.println("Communication to federation made by doctor Teal Reene Burrell: because of the declining ");
+                        System.out.println("nature of the sanity of our test subject, Stanley Irving Myles, I am requesting an armed ");
+                        System.out.println("transport to a psychiatric care ward where he can receive treatment. Thank you for your cooperation.");
                         System.out.println("End of transmission.");
                     } else if(input.equalsIgnoreCase("4")){
-                        System.out.println("fedarmy black bo_ 3112-aug-31. *male voice* shuttle 341 has docked with space station_r2 and are ready to receive the transport.");
-                        System.out.println("we have not received any communication from the station.");
-                        System.out.println("*a loud, undistinguishable noise causes the man to drop the log recorder*");
-                        System.out.println("what is that running at us? oh god he is covered in blood, open fire!");
-                        System.out.println("*after several seconds of the unmistakeable sound of laser blasts* ");
-                        System.out.println("i think we got him.");
-                        System.out.println("*Another voice, a robot's this time:*");
-                        System.out.println("shuttle has sustained high damage. unable to function. shutting down.");
+                        System.out.println("Emergency recording of biologist Annabel Colin Lac: *wispering* hello I am Annabel Colin Lac ");
+                        System.out.println("and I am recording what might be my last words. There are explosions all around and Stanley");
+                        System.out.println("*has killed almost everybody, I don't know who still survives and who is dead, the only thing I ");
+                        System.out.println("can do is wait for the shuttle and hope he doesn't find me. If anybody find this tablet I want");
+                        System.out.println("them to tell my family i have hid my money, wait, IT’S THE SHUTTLE. I AM SAVED. I CAN");
+                        System.out.println("GO HO ul shit. *new voice* one more dead, *sound of metal being crushed*");
                         System.out.println("END OF LOG.");
                     } else if(input.equalsIgnoreCase("5")){
-                        System.out.println("*new female voice * i think i have found refuge from John, hopefully I can wait till the shuttle shows up tomorrow, he should be unable to enter.");
+                        System.out.println("fedarmy black box_ 3112-aug-31. *male voice* shuttle 341,6954 has docked with space ");
+                        System.out.println("station 23,456 and are ready to receive the transport. we have not received any ");
+                        System.out.println("communication from the station. wow , this station is a real shit show isn’t it. What is that? ");
+                        System.out.println("There is someone waving. Is that someone running up behind them. well looks like the waving ");
+                        System.out.println("person is dead, let's get out of here fast. Shit he just threw something at us. *explosion*");
+                        System.out.println("*Recording ended, shuttle 341,6954 has been destroyed");
                     } else if(input.equalsIgnoreCase("6")){
+                        System.out.println("Log by 2nd engineer Thorburn Dylan Neville: *sound of walking* I better hurry to the shuttle");
+                        System.out.println("bay. I think i might have heard the shuttle docking and I want to get there before it leaves.");
+                        System.out.println("*explosion* maybe I shouldn't go to the shuttle room. Let’s go the robot room.");
+                    } else if(input.equalsIgnoreCase("7")){
+                        System.out.println("Captain's log, date 3112-feb-2:  I hate what the federation has become. Ever since we created ");
+                        System.out.println("that damned matter to energy converter nothing good has happened. There is basicly no");
+                        System.out.println(" com_512maincore. shutting down robots, threat analysis: robots weaponized, activating robots, initiating robot core overload,");
+                        System.out.println(" robots=1, fail safe: robot inside, override self destruct, robots=0, ");
+                        System.out.println("damage assessment: robot control undamaged. ");
+                    } else if(input.equalsIgnoreCase("8")){
+                        System.out.println("!!!!!!!!!!!!!!!!!!!!emergency shutdown!!!!!!!!!!!!!!!!!!!! ");
+                        System.out.println(" red alert activated, power conduits 1,2,3,4,5 down, unable to receive response from");
+                        System.out.println(" com_512maincore. shutting down robots, threat analysis: robots weaponized, activating robots, initiating robot core overload,");
+                        System.out.println(" robots=1, fail safe: robot inside, override self destruct, robots=0, ");
+                        System.out.println("damage assessment: robot control undamaged. ");
+                    } else if(input.equalsIgnoreCase("9")){
+                        System.out.println("!!!!!!!!!!!!!!!!!!!!emergency shutdown!!!!!!!!!!!!!!!!!!!! ");
+                        System.out.println(" red alert activated, power conduits 1,2,3,4,5 down, unable to receive response from");
+                        System.out.println(" com_512maincore. shutting down robots, threat analysis: robots weaponized, activating robots, initiating robot core overload,");
+                        System.out.println(" robots=1, fail safe: robot inside, override self destruct, robots=0, ");
+                        System.out.println("damage assessment: robot control undamaged. ");
+                    } else if(input.equalsIgnoreCase("10")){
+                        System.out.println("!!!!!!!!!!!!!!!!!!!!emergency shutdown!!!!!!!!!!!!!!!!!!!! ");
+                        System.out.println(" red alert activated, power conduits 1,2,3,4,5 down, unable to receive response from");
+                        System.out.println(" com_512maincore. shutting down robots, threat analysis: robots weaponized, activating robots, initiating robot core overload,");
+                        System.out.println(" robots=1, fail safe: robot inside, override self destruct, robots=0, ");
+                        System.out.println("damage assessment: robot control undamaged. ");
+                    } else if(input.equalsIgnoreCase("11")){
+                        System.out.println("!!!!!!!!!!!!!!!!!!!!emergency shutdown!!!!!!!!!!!!!!!!!!!! ");
+                        System.out.println(" red alert activated, power conduits 1,2,3,4,5 down, unable to receive response from");
+                        System.out.println(" com_512maincore. shutting down robots, threat analysis: robots weaponized, activating robots, initiating robot core overload,");
+                        System.out.println(" robots=1, fail safe: robot inside, override self destruct, robots=0, ");
+                        System.out.println("damage assessment: robot control undamaged. ");
+                    } else if(input.equalsIgnoreCase("12")){
+                        System.out.println("!!!!!!!!!!!!!!!!!!!!emergency shutdown!!!!!!!!!!!!!!!!!!!! ");
+                        System.out.println(" red alert activated, power conduits 1,2,3,4,5 down, unable to receive response from");
+                        System.out.println(" com_512maincore. shutting down robots, threat analysis: robots weaponized, activating robots, initiating robot core overload,");
+                        System.out.println(" robots=1, fail safe: robot inside, override self destruct, robots=0, ");
+                        System.out.println("damage assessment: robot control undamaged. ");
+                    } else if(input.equalsIgnoreCase("13")){
+                        System.out.println("!!!!!!!!!!!!!!!!!!!!emergency shutdown!!!!!!!!!!!!!!!!!!!! ");
+                        System.out.println(" red alert activated, power conduits 1,2,3,4,5 down, unable to receive response from");
+                        System.out.println(" com_512maincore. shutting down robots, threat analysis: robots weaponized, activating robots, initiating robot core overload,");
+                        System.out.println(" robots=1, fail safe: robot inside, override self destruct, robots=0, ");
+                        System.out.println("damage assessment: robot control undamaged. ");
+                    } else if(input.equalsIgnoreCase("14")){
+                        System.out.println("!!!!!!!!!!!!!!!!!!!!emergency shutdown!!!!!!!!!!!!!!!!!!!! ");
+                        System.out.println(" red alert activated, power conduits 1,2,3,4,5 down, unable to receive response from");
+                        System.out.println(" com_512maincore. shutting down robots, threat analysis: robots weaponized, activating robots, initiating robot core overload,");
+                        System.out.println(" robots=1, fail safe: robot inside, override self destruct, robots=0, ");
+                        System.out.println("damage assessment: robot control undamaged. ");
+                    } else if(input.equalsIgnoreCase("15")){
                         System.out.println("!!!!!!!!!!!!!!!!!!!!emergency shutdown!!!!!!!!!!!!!!!!!!!! ");
                         System.out.println(" red alert activated, power conduits 1,2,3,4,5 down, unable to receive response from");
                         System.out.println(" com_512maincore. shutting down robots, threat analysis: robots weaponized, activating robots, initiating robot core overload,");
