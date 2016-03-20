@@ -6,7 +6,7 @@ import java.util.Random;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Interface2
+public class Game
 {
     public static void main(String[]args){
        int health,food,energy,sP,mP,lP,sB,mB,lB,sPak,scrap,tool,robots;
