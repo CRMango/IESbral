@@ -150,13 +150,13 @@ public class Game
                    System.out.println("you see that you are in the matter converter room, the matter converter looks partially");
                    System.out.println("broken, it is charging slowly.");
                 } else if(position==1){
-                     System.out.println("the reactor is partially destroyed. the blast door to the hanger is locked.");
+                     System.out.println("the reactor is partially destroyed. there is a blast door to the hangar.");
                 } else if(position==2){
-                    
+                    System.out.println("This is the crew quarters. You can't remember where you slept, for some reason. maybe it'll come back to you soon.");
                 } else if(position==3){
                     System.out.println("you have "+ robots + " amount of robots. they are collecting scrap at "+robots*10 + " per turn.");
                 } else if(position==4){
-                    
+                    System.out.println("The control room of the station. The computer is rather small, though the heat venting system is extensive.");
                 } else if(position==5){
                     System.out.println("the med bay looks intact, basicly prestine. all machines work.");
                 } else if(position==6){
@@ -238,8 +238,8 @@ public class Game
                                     while(temp2==0){
                                         input = sc.nextLine();
                                     if(input.equalsIgnoreCase("y")){
-                                        sB=mB-4;
-                                        sP=mP-14;
+                                        mB=mB-4;
+                                        mP=mP-15;
                                         shbyUn++;
                                         temp2++;
                                         System.out.println("You have fixed the door to the shuttlebay.");
@@ -268,7 +268,7 @@ public class Game
                             lng[5]=1;
                             lng[4]=1;  
                             } else if(shbyUn==2){
-                                position=5;
+                                position=6;
                             }
                         } else {
                             System.out.println("What? You have to use s or e to move from here.");
@@ -283,14 +283,14 @@ public class Game
                         position=6;
                     }else if(input.equalsIgnoreCase("n")){
                         if(ctrlUn==0){
-                            System.out.println("The door is broken, but you will be able to fix it for 5 energy and 2 medium batteries.");
+                            System.out.println("The door is broken, but you will be able to fix it for 5 energy and 2 large batteries.");
                             if(energy>4){
-                                if(mB>1){
+                                if(lB>1){
                                     System.out.println("You have the required materials to fix the door. will you? y/n");
                                     input = sc.nextLine();
                                     if(input.equalsIgnoreCase("y")){
                                         energy=energy-5;
-                                        mB=mB-2;
+                                        lB=lB-2;
                                         ctrlUn++;
                                         System.out.println("You've unlocked this door! You are now able to go into the control room.");
                                     } else if(input.equalsIgnoreCase("n")){
@@ -351,16 +351,16 @@ public class Game
                     input = sc.nextLine();
                     if(input.equalsIgnoreCase("n")){
                         if(shbyUn==0){
-                            System.out.println("The door to the shuttle bay is locked. You will be able to open it for the cost of 5 energy and 2 medium batteries.");
-                            if(energy>4){
-                                if(mB>1){
+                            System.out.println("The door to the shuttle bay is locked. You will be able to open it for the cost of 15 medium parts and 4 medium batteries.");
+                            if(mB>4){
+                                if(mP>14){
                                     System.out.println("It seems you have the resources needed to fix the door. Will you? y/n");
-                                    
+                                    input=sc.nextLine();
                                     if(input.equalsIgnoreCase("y")){
                                         System.out.println("You've fixed the door to the shuttle bay!");
                                         shbyUn++;
-                                        energy=energy-5;
-                                        mB=mB-2;
+                                        mP=mP-15;
+                                        mB=mB-4;
                                     } else if(input.equalsIgnoreCase("n")){
                                         System.out.println("You've decided not to fix the door at this time.");
                                         type=1;
@@ -385,7 +385,7 @@ public class Game
                             lng[3]=1;
                             lng[5]=1;
                             lng[4]=1;
-                        } else if(rbtcUn==2){
+                        } else if(shbyUn==2){
                             position=6;
                         }
                     } else if(input.equalsIgnoreCase("s")){
@@ -513,7 +513,7 @@ public class Game
                         System.out.println("A forcefield: 4 medium batteries, and 4 medium parts for a full protection from asteroids.");
                         System.out.println("enter FORCEFIELD");
                     }
-                    if(progress==9){
+                    if(progress>8){
                         System.out.println("Fuel for the ship: 30 energy for 10 canisters.");
                         System.out.println("enter FUEL");
                     }
@@ -549,7 +549,7 @@ public class Game
                             System.out.println("The full component will cost a whopping 15 medium parts, 5 medium batteries and 6 large parts, with 20 energy needed for welding.");
                         }
                         if(progress%2==1){
-                            if(progress==9){
+                            if(progress>7){
                                 System.out.println("You have already fixed the shuttle. use the leave station command in the shuttlebay to enter your ship.");
                             } else {
                             System.out.println("You seem to have a component made which you haven't fitted on the shuttle yet!");
@@ -1094,17 +1094,42 @@ public class Game
                 disasterchance=disasterchance+100;
             } else if(input.equalsIgnoreCase("leave station")){
                 if(position==6){
-                    if(progress==9){
+                    if(progress>7){
                         mode=2;
                         System.out.println("You have left the station and are now on the space ship.");
                         System.out.println("On the star map, you are at 3,3");
                         System.out.println("You can use the move function to move around, and the enter station command to go back to the station as long as you are at 3,3.");
+                        type=0;
+                    } else {
+                        System.out.println("You have not fully built the shuttle.");
+                        
                     }
                 } else {
                     System.out.println("You are not at the shuttlebay.");
                     
                 }
-                type=1;
+                type=0;
+            } else if(input.equalsIgnoreCase("getAllCompletion")){
+                progress=8;
+                fuel=500;
+                lng[0]=1;
+                lng[1]=1;
+                lng[2]=1;
+                lng[3]=1;
+                lng[4]=1;
+                lng[5]=1;
+                lng[6]=1;
+                lng[7]=1;
+                lng[8]=1;
+                lng[9]=1;
+                lng[10]=1;
+                lng[11]=1;
+                lng[12]=1;
+                ctrlUn=2;
+                crqrUn=2;
+                mdbyUn=2;
+                rbtcUn=2;
+                shbyUn=2;
             }
             System.out.println("");
         }
@@ -1163,25 +1188,25 @@ public class Game
         System.out.println("--------------------------------------------");
         
     }
-    while(mode==1){
+    while(mode==2){
         input = sc.nextLine();
         temp2=1;
         if(input.equalsIgnoreCase("move")){
             while(temp2==1){
             System.out.println("In what direction will you go?");
-            System.out.println("You are at "+(starmapP-starmapP%10) +","+starmapP%10+" .");
+            System.out.println("You are at "+(starmapP-starmapP%10/10) +","+starmapP%10+" .");
             temp2=0;
             if((starmapP%10)<5){
-                System.out.println("#1: To sector " +(starmapP-starmapP%10)+","+(starmapP%10+1));
+                System.out.println("#1: To sector " +(starmapP-starmapP%10)/10+","+(starmapP%10+1));
             }
             if((starmapP%10)>1){
-                System.out.println("#2: To sector " +(starmapP-starmapP%10)+","+(starmapP%10-1));
+                System.out.println("#2: To sector " +(starmapP-starmapP%10)/10+","+(starmapP%10-1));
             }
             if((starmapP-starmapP%10)<50){
-                System.out.println("#3: To sector " +(starmapP+10-starmapP%10)+","+starmapP%10);
+                System.out.println("#3: To sector " +(starmapP+10-starmapP%10)/10+","+starmapP%10);
             }
             if((starmapP-starmapP%10)>10){
-                System.out.println("#4: To sector " +(starmapP-10-starmapP%10)+","+starmapP%10);
+                System.out.println("#4: To sector " +(starmapP-10-starmapP%10)/10+","+starmapP%10);
             }
             input = sc.nextLine();
             if(input.equalsIgnoreCase("1")){
