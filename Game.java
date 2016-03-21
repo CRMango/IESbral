@@ -6,7 +6,7 @@ import java.util.Random;
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class Game
+public class Interface2
 {
     public static void main(String[]args){
        int health,food,energy,sP,mP,lP,sB,mB,lB,sPak,scrap,tool,robots;
@@ -38,7 +38,7 @@ public class Game
         sP=0;mP=0;lP=0;sB=0;mB=0;lB=0;sPak=1;scrap=0;
         logs=0;
         tool=0;
-        food=20;
+        food=30;
         robots=0;
         int fuel = 0;
         int reactorlevel=1;
@@ -67,7 +67,7 @@ public class Game
            System.out.println("");
 
             //START THIS STUFF UP
-            
+    while(health>0){
           while(mode==1){  
            type=1;
            
@@ -78,13 +78,13 @@ public class Game
                   if(position==1){
                       System.out.println("You can upgrade the reactor for:");
                       if(reactorlevel>4){
-                          System.out.println(5+" medium parts");
+                          System.out.println(reactorlevel+" medium parts");
                         }
                       if(reactorlevel>2){
-                          System.out.println(5+" small parts");
+                          System.out.println(reactorlevel+" small parts");
                         }
                       if(reactorlevel>9){
-                          System.out.println(5+" large parts");
+                          System.out.println(reactorlevel+" large parts");
                         }
                       System.out.println(((reactorlevel*reactorlevel)/2+reactorlevel) + " energy.");
                       System.out.println("Y/N ?");
@@ -92,22 +92,22 @@ public class Game
                       if(input.equalsIgnoreCase("y")){
                           upgradeCost=true;
                           if(reactorlevel>2){
-                              if(sP<5){
+                              if(sP<reactorlevel){
                                   upgradeCost=false;
                               }
                               }
                           if(reactorlevel>4){
-                            if(mP<5){
+                            if(mP<reactorlevel){
                                 upgradeCost=false;
                                 }
                           }
                           if(reactorlevel>9){
-                              if(lP<5){
+                              if(lP<reactorlevel){
                                   upgradeCost=false;
                                   }
                           }
                           
-                          if((reactorlevel^2/2+1)>energy){
+                          if((reactorlevel*reactorlevel/2+1)>energy){
                               upgradeCost=false;
                               }
                           if(upgradeCost==true){
@@ -115,14 +115,16 @@ public class Game
                               if(reactorlevel>2){
                                   if(reactorlevel>4){
                                       if(reactorlevel>9){
-                                          lP=lP-5;
+                                          lP=lP-reactorlevel;
                                           }
-                                          mP=mP-5;
+                                          mP=mP-reactorlevel;
                                       }
-                                      sP=sP-5;
+                                      sP=sP-reactorlevel;
                                   }
                                   reactorlevel++;
-                              }
+                              } else {
+                                  System.out.println("You don't have the resources to upgrade the reactor.");
+                                }
                         } else if(input.equalsIgnoreCase("n")){
                             System.out.println("You decide not to upgrade the reactor.");
                             type=1;
@@ -138,10 +140,12 @@ public class Game
             }else if(input.equalsIgnoreCase("help")){
                System.out.println("The available commands are:");
                  System.out.println("upgrade, use for upgrading the reactor");
-                 System.out.println("generate food, use to sustain yourself, used in the med room");
+                 System.out.println("help, of course");
+                 System.out.println("look around, get an overview of the room you are in. keep in mind this will happen automatically on your first visit to any room.");
+                 System.out.println("build, gives you the ability to build things in the reactor room.");
                  System.out.println("check situation, finds your resource total, and your wellbeing.");
                  System.out.println("move");
-                 System.out.println("listen to log, only usable for the log in the room you found it in");
+                 System.out.println("listen to log");
                  System.out.println("use, gives you some options such as manning the reactor for a bonus, fixing it, healing and so on.");
                  type=1;
             } else
@@ -1022,9 +1026,10 @@ public class Game
                     } else if(input.equalsIgnoreCase("7")){
                         System.out.println("Captain's log, date 3112-feb-2:  I hate what the federation has become. Ever since we created ");
                         System.out.println("that damned matter to energy converter nothing good has happened. There is basicly no");
-                        System.out.println(" com_512maincore. shutting down robots, threat analysis: robots weaponized, activating robots, initiating robot core overload,");
-                        System.out.println(" robots=1, fail safe: robot inside, override self destruct, robots=0, ");
-                        System.out.println("damage assessment: robot control undamaged. ");
+                        System.out.println("economy because nobody works because everybody just replicated whatever they wanted. It was fine for awhile");
+                        System.out.println("but because the endless ennui of humanity was not satisfied with infinite objects, we decided we wanted power and control over others.");
+                        System.out.println("because we couldn’t do this using money we started using weapons, now the only way for the federation to take control is weapons blueprints.");
+                        System.out.println("That is our job and we have to do all of our testing on poor Stanley.");
                     } else if(input.equalsIgnoreCase("8")){
                         System.out.println("the test subject has had no negative physical effects from the body regenerator but");
                         System.out.println("dying and coming back to life seems to have taken a huge toll on his mind. As such I have psychoanalyzed Stanley.");
@@ -1037,12 +1042,12 @@ public class Game
                         System.out.println(" and a weapon that has effects that are incredibly frightening so it can be used better to threaten.");
                     } else if(input.equalsIgnoreCase("10")){
                         System.out.println("Communication to all by physicist Bernie Fancy Dalton:meyday meyday meyday, this is Bernie Fancy Dalton on space station 23,456 orbiting the 4th planet of the gonjari system.");
-                        System.out.println("A member of our crew has lost there mind and become homicidal. The only remaining members of the crew are the captain and I.");
+                        System.out.println("A member of our crew has lost their mind and become homicidal. The only remaining members of the crew are the captain and I.");
                         System.out.println(" we are about to attempt to kill the dangerous crew member and need evac from the station.");
                     } else if(input.equalsIgnoreCase("11")){
-                        System.out.println("Captain’s log date 3112-aug-31: I believe that the bernie and I are the only remaining crewmembers on the ship,");
+                        System.out.println("Captain’s log date 3112-aug-31: I believe that Bernie and I are the only remaining crew members on the ship,");
                         System.out.println("we have decided to put the ship into red alert and attempt to kill the test subject.");
-                        System.out.println("We have sent a distress signal and are hoping a shuttle will come and save us. If we do not survive tell my wife i always hated her.");
+                        System.out.println("We have sent a distress signal and are hoping a shuttle will come and save us. If we do not survive, tell my wife i always hated her.");
                     } else if(input.equalsIgnoreCase("12")){
                         System.out.println("!!!!!!!!!!!!!!!!!!!!emergency shutdown!!!!!!!!!!!!!!!!!!!! ");
                         System.out.println(" red alert activated, power conduits 1,2,3,4,5 down, unable to receive response from");
@@ -1053,12 +1058,12 @@ public class Game
                         System.out.println("Log by 2nd engineer Thorburn Dylan Neville: I think I have found refuge from Stanley, I have a large supply of food and can hopefully wait him out.");
                         System.out.println(" *alarm* ");
                         System.out.println("shit, the computer has decided to destroy the robots. hopefully it won't destroy this one that is in for repair.");
-                        System.out.println("probably should  try to detach it from the system");
+                        System.out.println("probably should  try to detach it from the system-");
                         System.out.println("...... ");
                         System.out.println("... it's gone into meltdown already. ");
                         System.out.println("*Explosion*");
                     } else if(input.equalsIgnoreCase("14")){
-                        System.out.println("Science log by head scientist Milburn Hollis Cook: I have finally done it! I have created the universes best weapon for oppressing people, a radiation gun!");
+                        System.out.println("Science log by head scientist Milburn Hollis Cook: I have finally done it! I have created the universe's best weapon for oppressing people, a radiation gun!");
                         System.out.println("It is perfect for all categories, it is the right amount of deadly because i can change the amount of");
                         System.out.println("radiation that it emits to get the perfect result,");
                         System.out.println(" it's painful it levels lasting effects like black nails and cancer which will hurt of the rest of however long the live. It's scary, seeing people affected by radiation is terrifying.");
@@ -1099,6 +1104,7 @@ public class Game
                         System.out.println("You have left the station and are now on the space ship.");
                         System.out.println("On the star map, you are at 3,3");
                         System.out.println("You can use the move function to move around, and the enter station command to go back to the station as long as you are at 3,3.");
+                        System.out.println("Additionally, you can chase after the test chamber, which has broken off of the ship, with [  find test room  ].");
                         type=0;
                     } else {
                         System.out.println("You have not fully built the shuttle.");
@@ -1125,9 +1131,6 @@ public class Game
                 lng[10]=1;
                 lng[11]=1;
                 lng[12]=1;
-                lng[13]=1;
-                lng[14]=1;
-                logs=1;
                 ctrlUn=2;
                 crqrUn=2;
                 mdbyUn=2;
@@ -1185,7 +1188,8 @@ public class Game
         }
         if(rbtcUn!=0){
             if(robots>0){
-                System.out.println("Finally, your " + robots + " robots have gathered " + robots*10 + " scrap this turn.");
+                System.out.println("Finally, your " + robots + " robots have gathered " + robots*5 + " scrap this turn.");
+                scrap=scrap+robots*5;
             }
         }
         System.out.println("--------------------------------------------");
@@ -1197,7 +1201,7 @@ public class Game
         if(input.equalsIgnoreCase("move")){
             while(temp2==1){
             System.out.println("In what direction will you go?");
-            System.out.println("You are at "+(starmapP-starmapP%10/10) +","+starmapP%10+" .");
+            System.out.println("You are at "+((starmapP-starmapP%10)/10) +","+starmapP%10+" .");
             temp2=0;
             if((starmapP%10)<5){
                 System.out.println("#1: To sector " +(starmapP-starmapP%10)/10+","+(starmapP%10+1));
@@ -1213,11 +1217,11 @@ public class Game
             }
             input = sc.nextLine();
             if(input.equalsIgnoreCase("1")){
-                starmapP=starmapP++;
+                starmapP++;
                 fuel--;
                 food--;
             } else if(input.equalsIgnoreCase("2")){
-                starmapP=starmapP--;
+                starmapP--;
                 fuel--;
                 food--;
             } else if(input.equalsIgnoreCase("3")){
@@ -1237,6 +1241,7 @@ public class Game
         } else if(input.equalsIgnoreCase("enter station")){
             if(starmapP==33){
                 mode=1;
+                System.out.println("You are back in the station.");
             } else {
                 System.out.println("You need to be at 3,3 to enter the station.");
             }
@@ -1287,7 +1292,7 @@ public class Game
             System.out.println("You have ran out of fuel.");
             System.out.println("GAME OVER.");
             health=0;
-            
+            mode=0;
         }
         if(food<6){
             System.out.println("You have a very small amount of food left!");
@@ -1427,6 +1432,7 @@ public class Game
         System.out.println("You have " + fuel + " Units of fuel left.");
         System.out.println("You have " +food+ " turns of food left.");
         }
+}
 }
    
 }
