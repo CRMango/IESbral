@@ -1125,6 +1125,9 @@ public class Game
                 lng[10]=1;
                 lng[11]=1;
                 lng[12]=1;
+                lng[13]=1;
+                lng[14]=1;
+                logs=1;
                 ctrlUn=2;
                 crqrUn=2;
                 mdbyUn=2;
